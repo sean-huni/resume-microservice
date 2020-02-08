@@ -12,13 +12,11 @@ Gone are the days of handing out a copy of the paper CV. This project aims to ex
 Launching the App with Gradle
  - On Unix/MacOS
  
- 
-    ./gradlew bootRun
+    `./gradlew bootRun`
     
  - On Windows:
 
-
-    gradlew.bat run
+    `gradlew.bat run`
  
     
 # Swagger-Docs
