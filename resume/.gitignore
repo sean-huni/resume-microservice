@@ -128,3 +128,5 @@ hs_err_pid*
 *.iml
 out
 gen
+gradle/wrapper/gradle-wrapper.properties
+src/main/java/xyz/seanhuni/resume/exception/
