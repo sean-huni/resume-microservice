@@ -134,8 +134,7 @@ VALUES (10, (SELECT max(id)
 
 -- Q7
 INSERT INTO dr_schema.quest_ans (id, quest, ans, version, DT_CREATED, DT_UPDATED)
-VALUES (7,
-        'Aside from all the gimmicks, what else do you do for fun',
+VALUES (7, 'Aside from all the gimmicks, what else do you do for fun',
         'I embrace creativity, and as a pianist/music producer, music has become
           that part of me that opens up my mind to a free-flow of ideas in the form of sound.
          Like any mathematician, Chess is always a great game for training the brain''s muscles. E.g. weighing up
@@ -145,37 +144,25 @@ VALUES (7,
 
 -- Q7.1
 INSERT INTO dr_schema.quest_info (id, QUEST_ANS_ID, B_INFO, version, DT_CREATED, DT_UPDATED)
-VALUES (11, (SELECT max(id)
-             FROM dr_schema.quest_ans),
-        'Sports: indoor soccer (as a goal-keeper), rugby (left-winger), basketball.',
-        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+VALUES (11, (SELECT max(id) FROM dr_schema.quest_ans), 'Sports: indoor soccer (as a goal-keeper), rugby (left-winger), basketball.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q7.2
 INSERT INTO dr_schema.quest_info (id, QUEST_ANS_ID, B_INFO, version, DT_CREATED, DT_UPDATED)
-VALUES (12, (SELECT max(id)
-             FROM dr_schema.quest_ans),
-        'Action: Sky-Diving, Go-Karting, Jet-Skiing.',
-        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+VALUES (12, (SELECT max(id) FROM dr_schema.quest_ans), 'Action: Sky-Diving, Go-Karting, Jet-Skiing.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q7.3
 INSERT INTO dr_schema.quest_info (id, QUEST_ANS_ID, B_INFO, version, DT_CREATED, DT_UPDATED)
-VALUES (13, (SELECT max(id)
-             FROM dr_schema.quest_ans),
-        'Adventure: Exploring other places in nature with the intention to learn more about the field of Biologically Inspired Computation.',
+VALUES (13, (SELECT max(id) FROM dr_schema.quest_ans), 'Adventure: Exploring other places in nature with the intention to learn more about the field of Biologically Inspired Computation.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q7.4
 INSERT INTO dr_schema.quest_info (id, QUEST_ANS_ID, B_INFO, version, DT_CREATED, DT_UPDATED)
-VALUES (14, (SELECT max(id)
-             FROM dr_schema.quest_ans),
-        'Computer Gaming: I think of this activity as a way of imitating reality through Simulation Training e.g Aviation Industries. I am also curious of how Machine Learning has been applied to improve computer graphics in gaming e.g. Grand Theft Auto V - ''Alireza Shafaei, a ''PhD student AT UBC'' Play and Learn: Using Video Games to Train Computer Vision Models.',
+VALUES (14, (SELECT max(id) FROM dr_schema.quest_ans), 'Computer Gaming: I think of this activity as a way of imitating reality through Simulation Training e.g Aviation Industries. I am also curious of how Machine Learning has been applied to improve computer graphics in gaming e.g. Grand Theft Auto V - ''Alireza Shafaei, a ''PhD student AT UBC'' Play and Learn: Using Video Games to Train Computer Vision Models.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q8
 INSERT INTO dr_schema.quest_ans (id, quest, ans, version, DT_CREATED, DT_UPDATED)
-VALUES (8,
-        'Anything else that you like doing',
-        'Yes of course, besides building my career from teamwork and practical experience alone, we live in an era where good education is free. In my relaxing time I participate in free-online courses from world-class universities. The likes of Stanford University, University of California, Johns Hopkins University, University of Cape Town e.t.c. My attitude towards my career is equipped with a sort of a mindset that embraces continuous-learning/sharing knowledge through: ',
+VALUES (8, 'Anything else that you like doing', 'Yes of course, besides building my career from teamwork and practical experience alone, we live in an era where good education is free. In my relaxing time I participate in free-online courses from world-class universities. The likes of Stanford University, University of California, Johns Hopkins University, University of Cape Town e.t.c. My attitude towards my career is equipped with a sort of a mindset that embraces continuous-learning/sharing knowledge through: ',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q8.1
@@ -187,9 +174,7 @@ VALUES (15, (SELECT max(id)
 
 -- Q8.2
 INSERT INTO dr_schema.quest_info (id, QUEST_ANS_ID, B_INFO, version, DT_CREATED, DT_UPDATED)
-VALUES (16, (SELECT max(id)
-             FROM dr_schema.quest_ans),
-        'Coursera - An online platform with free online courses from world class universities.',
+VALUES (16, (SELECT max(id) FROM dr_schema.quest_ans), 'Coursera - An online platform with free online courses from world class universities.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q8.3
@@ -206,10 +191,9 @@ VALUES (18, (SELECT max(id)
         'Hackathon Events/Challenges.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
---------------------------------------------------------------------------------------------
--------------------------------Start
--Experience-Data----------------------------------------------
---------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------
+# -------------------------------Start-Experience-Data----------------------------------------
+# --------------------------------------------------------------------------------------------
 
 -- # Populating Experience Data
 -- # SET FOREIGN_KEY_CHECKS = 0;
@@ -219,27 +203,20 @@ VALUES (18, (SELECT max(id)
 
 INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, natow, version, DT_CREATED, DT_UPDATED)
 VALUES (1, STR_TO_DATE('01-07-2019', '%d-%m-%Y'), STR_TO_DATE('20-04-1900', '%d-%m-%Y'), TRUE,
-        'Founder & Software Engineer',
-        'Responsibilities: ', 1, CURRENT_TIMESTAMP(),
-        CURRENT_TIMESTAMP());
+        'Founder & Software Engineer', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, natow, version, DT_CREATED, DT_UPDATED)
 VALUES (2, STR_TO_DATE('01-03-2019', '%d-%m-%Y'), STR_TO_DATE('20-04-1900', '%d-%m-%Y'), TRUE,
-        'Senior Java Consultant',
-        'Responsibilities: ', 1, CURRENT_TIMESTAMP(),
-        CURRENT_TIMESTAMP());
+        'Senior Java Consultant','Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, natow, version, DT_CREATED, DT_UPDATED)
 VALUES (3, STR_TO_DATE('19-12-2015', '%d-%m-%Y'), STR_TO_DATE('30-04-2019', '%d-%m-%Y'), FALSE,
-        'Co-Founder & ML Engineer (Part-Time)',
-        'Responsibilities: ', 1, CURRENT_TIMESTAMP(),
-        CURRENT_TIMESTAMP());
+        'Co-Founder & ML Engineer (Part-Time)', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, natow, version, DT_CREATED, DT_UPDATED)
 VALUES (4, STR_TO_DATE('30-01-2017', '%d-%m-%Y'), STR_TO_DATE('31-08-2018', '%d-%m-%Y'), FALSE,
         'Java Consultant', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(),
-        CURRENT_TIMESTAMP());
---# Fix the date, Currently working until NOW checkbox.
+        CURRENT_TIMESTAMP()); # Fix the date, Currently working until NOW checkbox.
 
 INSERT INTO dr_schema.experience (id, dt_start, dt_end, desig, natow, CURRP, version, DT_CREATED, DT_UPDATED)
 VALUES (5, STR_TO_DATE('16-04-2016', '%d-%m-%Y'), STR_TO_DATE('31-07-2016', '%d-%m-%Y'), 'Java Operations Support',
@@ -253,8 +230,9 @@ INSERT INTO dr_schema.experience (id, dt_start, dt_end, desig, natow, CURRP, ver
 VALUES (7, STR_TO_DATE('01-02-2013', '%d-%m-%Y'), STR_TO_DATE('01-07-2014', '%d-%m-%Y'), 'Java Software Developer',
         'Responsibilities: ', FALSE, 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
--------------------------------Responsibilities-Data------------------------------------------
--- # Populating Responsibility Config-Data
+# -------------------------------Responsibilities-Data------------------------------------------
+# Populating Responsibility Config-Data
+
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (1, 1, 'Continuous Professional Development (CPD) – Special emphasis on continuous learning, acquiring
 new knowledge and skills to enhancing the level of professional competence within the modern
@@ -262,8 +240,7 @@ industry.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (2, 1, 'Designing, developing and implementing redundant cloud-driven software solutions that are scalable
-on demand, billable per usage, and reliable to end-users with minimal downtime.', 1,
-        CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+on demand, billable per usage, and reliable to end-users with minimal downtime.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (3, 1, 'Supporting & maintaining existing Spring Cloud Netflix software systems.', 1,
@@ -271,44 +248,35 @@ VALUES (3, 1, 'Supporting & maintaining existing Spring Cloud Netflix software s
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (4, 1, 'Tech Stack: Spring-Cloud, Spring-Boot, Circle-Ci, Docker, Kubernetes, Jacoco, Sonarqube, Git, Java-11.',
-        1,
-        CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
-VALUES (5, 2,
-        'Refactoring & migrating back-end monolith systems to Spring Boot containerised microservices. A microservice ecosystem',
-        1,
-        CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+VALUES (5, 2, 'Refactoring & migrating back-end monolith systems to Spring Boot containerised microservices. A microservice ecosystem',
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (6, 2, 'Redesigning and migrating legacy database structures into maintainable and scalable relational models.',
-        1,
-        CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (7, 2, 'High-quality production-ready code in agile environments through the use of test-driven methodologies.',
-        1,
-        CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (8, 2, 'Training & mentoring new developers and engaging in code-review sessions.', 1,
         CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
-VALUES (9, 2,
-        'Designing and implementing cloud-ready Prototypes/P.O.C''s for the proposed microservices architecture solutions',
-        1,
-        CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+VALUES (9, 2, 'Designing and implementing cloud-ready Prototypes/P.O.C''s for the proposed microservices architecture solutions',
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (10, 3, 'Designing, developing & implementing upcoming systems using Scikit-Learn, Python, Matlab.', 1,
         CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
-VALUES (11, 3,
-        'Assisting clients on integrating Machine Learning within their current systems, with a significant added value on revenue',
-        1,
-        current_timestamp(), current_timestamp());
+VALUES (11, 3, 'Assisting clients on integrating Machine Learning within their current systems, with a significant added value on revenue',
+        1, current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (12, 3, 'Analysing trends, building statistical models for autonomous software systems such
@@ -324,13 +292,11 @@ VALUES (14, 4, 'Provided support for the African Bank website (Spring-Framework,
         CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
-VALUES (15, 4,
-        'Training Junior Developers and provided encouraging feedback ensuring quality work while adhering to coding standards.',
+VALUES (15, 4, 'Training Junior Developers and provided encouraging feedback ensuring quality work while adhering to coding standards.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
-VALUES (16, 4,
-        'Collaborated in an agile driven environment with the team where we utilise mostly the scrum development process to deliver solutions through iterative successful sprints.',
+VALUES (16, 4, 'Collaborated in an agile driven environment with the team where we utilise mostly the scrum development process to deliver solutions through iterative successful sprints.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
@@ -338,18 +304,15 @@ VALUES (17, 4, 'Middleware microservices for transactional banking in an agile-d
         CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
-VALUES (18, 4,
-        'Collaborated with Business Analysts, System Analysts and other stakeholders from various business units in redeveloping services for African Bank.',
+VALUES (18, 4, 'Collaborated with Business Analysts, System Analysts and other stakeholders from various business units in redeveloping services for African Bank.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
-VALUES (19, 4,
-        'Involved in several 3rd party integrations with different stakeholders including Blue Label telecoms, Thunderhead, DEA, Direct-Transact for airtime, electricity, online bank statements, transactional banking, loan, documents, and notification services.',
+VALUES (19, 4, 'Involved in several 3rd party integrations with different stakeholders including Blue Label telecoms, Thunderhead, DEA, Direct-Transact for airtime, electricity, online bank statements, transactional banking, loan, documents, and notification services.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
-VALUES (20, 4,
-        'Tech-Stack: Jenkins, Jacoco, Spring-MVC, Spring-Boot, Spring-Cloud, Docker, Docker-Swarm, Sonarqube, Artifactory, Git, Gitlab, Java-8',
+VALUES (20, 4, 'Tech-Stack: Jenkins, Jacoco, Spring-MVC, Spring-Boot, Spring-Cloud, Docker, Docker-Swarm, Sonarqube, Artifactory, Git, Gitlab, Java-8',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
@@ -393,16 +356,14 @@ VALUES (32, 7, 'AdminOnline Management System.', 1, current_timestamp(), current
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (33, 7, 'GSM & SMS enabled Memeza Alarm System.', 1, current_timestamp(), current_timestamp());
 
---------------------------------------------------------------------------------------------
--------------------------------End-Experience-Data------------------------------------------
---------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------
+# -------------------------------End-Experience-Data------------------------------------------
+# --------------------------------------------------------------------------------------------
 
 
---------------------------------------------------------------------------------------------
--------------------------------Start
--Education-Data-----------------------------------------
---------------------------------------------------------------------------------------------
---
+# --------------------------------------------------------------------------------------------
+# -------------------------------Start-Education-Data-----------------------------------------
+# --------------------------------------------------------------------------------------------
 INSERT INTO dr_schema.education (ID, DT_START, DT_END, INST, QUAL, HIGHS, O_GRADE, CURRQ, VERSION, DT_CREATED,
                                  DT_UPDATED)
 VALUES (1, STR_TO_DATE('02-05-2017', '%d-%m-%Y'), STR_TO_DATE('03-06-2017', '%d-%m-%Y'),
@@ -450,15 +411,14 @@ VALUES (6, STR_TO_DATE('01-02-2010', '%d-%m-%Y'), STR_TO_DATE('16-11-2012', '%d-
         'Mathematics, Data Structures & Algorithms, Software Development, Systems Analysis & Design.',
         '{Graduated with 10 Distinctions}', 0, 1, current_timestamp(), current_timestamp());
 
---------------------------------------------------------------------------------------------
--------------------------------End-Education-Data------------------------------------------
---------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------
+# -------------------------------End-Education-Data------------------------------------------
+# --------------------------------------------------------------------------------------------
 
 
---------------------------------------------------------------------------------------------
--------------------------------Start
--Recommendation-Data------------------------------------
---------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------
+# -------------------------------Start-Recommendation-Data------------------------------------
+# --------------------------------------------------------------------------------------------
 INSERT INTO dr_schema.recommend (id, name, design, note, VERSION, DT_CREATED, DT_UPDATED)
 VALUES (1, 'Dr. Tony Browne (BSc/MSc/PhD/CEng)', 'Senior Scientist at Data Predict',
         'I taught Kudzai on the Software Engineering module of the MSc offered by Liverpool University. Kudzai was an excellent student, achieving very high marks throughout the module. As well as his Software Engineering skills, Kudzai has very good research, communication and report writing skills. I wholeheartedly recommend Kudzai to any future employer or post-MSc programme of study.',
