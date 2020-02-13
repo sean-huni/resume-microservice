@@ -3,19 +3,20 @@ package xyz.seanhuni.resume.rest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.seanhuni.resume.dto.RespDto;
+import xyz.seanhuni.resume.forms.EmailForm;
 import xyz.seanhuni.resume.service.PreprocessService;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
+import static xyz.seanhuni.resume.commons.Constants.REST_V1_ENDPOINT;
 
 @Slf4j
 @RestController
-@RequestMapping("/send-email")
+@RequestMapping(REST_V1_ENDPOINT + "/send-email")
 public class EmailRestCtrl {
     private PreprocessService preprocessService;
 
@@ -26,15 +27,8 @@ public class EmailRestCtrl {
     }
 
     @PostMapping
-    public RespDto sendEmail(@NotNull @Size(max = 45, message = "Your Name should be at most 45 characters")
-                             @RequestParam(value = "name") String uName,
-                             @NotNull @Email @Size(max = 25, message = "Email should contain at most 25 characters")
-                             @RequestParam(value = "email") String uEmail,
-                             @Size(max = 75, min = 3, message = "Subject is restricted between 3 to 75 characters")
-                             @RequestParam(value = "subject") String uSubject,
-                             @Size(max = 900, min = 3, message = "Message is restricted between 3 to 900 characters in length.")
-                             @RequestParam(value = "message") String uMessage) {
+    public RespDto sendEmail(@RequestBody @NotNull EmailForm emailForm) {
 
-        return preprocessService.preprocessAndSendEmail(uName, uEmail, uSubject, uMessage);
+        return preprocessService.preprocessAndSendEmail(emailForm.getName(), emailForm.getEmail(), emailForm.getSubject(), emailForm.getMessage());
     }
 }

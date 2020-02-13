@@ -16,6 +16,7 @@ import xyz.seanhuni.resume.util.validation.StringFilter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @Service
@@ -32,7 +33,7 @@ public class PreProcessServiceImpl implements PreprocessService {
     @Override
     public RespDto preprocessAndSendEmail(String uName, String uEmail, String uSubject, String uMessage) {
 
-        EmailForm valObj;
+        EmailForm valObj = null;
         if (uEmail != null) {
             uEmail = uEmail.trim();
         }
@@ -55,22 +56,25 @@ public class PreProcessServiceImpl implements PreprocessService {
             errors.add(Constants.CSTM_EXC_VIEW_FLD_MESSAGE);
         }
 
-        //Validation for the String input values
-        valObj = dataValidation.validator(uName, uSubject, uMessage);
 
-        valObj.setEmail(filter.emailValidator(uEmail) ? uEmail : null);
-        try {
-            if (valObj.getEmail() == null || valObj.getEmail().trim().equals(""))
-                throw new EmailException("Null Email Address. Email failed validation!");
-        } catch (EmailException npe) {
-            log.warn("Empty email-address Field!", npe);
-            if (uEmail == null || uEmail.trim().equals("")) {
-                errors.add(String.format("%s email address.", "Invalid"));
+        if (errors.size() == 0) {
+
+            //Validation for the String input values
+            valObj = dataValidation.validator(uName, uSubject, uMessage);
+            valObj.setEmail(filter.emailValidator(uEmail) ? uEmail : null);
+
+            try {
+                if (valObj.getEmail() == null || valObj.getEmail().trim().equals(""))
+                    throw new EmailException("Null Email Address. Email failed validation!");
+            } catch (EmailException npe) {
+                log.warn("Empty email-address Field!", npe);
+                if (uEmail == null || uEmail.trim().equals("")) {
+                    errors.add(String.format("%s email address.", "Invalid"));
+                }
             }
         }
 
-
-        if (errors.size() == 0) {
+        if (errors.size() == 0 && Objects.nonNull(valObj)) {
             User userP, userResp;
             EmailMsg emailMsg = new EmailMsg();
             List<EmailMsg> emailMsgList;
@@ -122,7 +126,7 @@ public class PreProcessServiceImpl implements PreprocessService {
 
             //Sent the response here.
             if (emailResp.isSuccess()) {
-                emailResp.setRespMsg(String.format("Thank you %s! Your email has been sent successfully." +
+                emailResp.setRespMsg(String.format("Thank you %s! \nYour email has been sent successfully." +
                         "\n\nSean normally replies within 3hrs.", valObj.getName()));
             } else {
                 String warnMsg = "Email sent with warnings.";

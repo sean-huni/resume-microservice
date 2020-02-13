@@ -34,7 +34,7 @@ dependencies {
     implementation 'io.springfox:springfox-swagger-ui:2.9.2'
     implementation 'io.springfox:springfox-bean-validators:2.9.2'
     implementation 'net.sargue:mailgun:1.9.0'
-    implementation 'org.glassfish.jersey.inject:jersey-hk2:2.26'
+    implementation 'org.glassfish.jersey.inject:jersey-hk2:2.30'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
@@ -52,7 +52,7 @@ dependencies {
     testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-stub-runner'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
     testImplementation 'net.sargue:mailgun:1.9.0'
-    testImplementation 'org.glassfish.jersey.inject:jersey-hk2:2.26'
+    testImplementation 'org.glassfish.jersey.inject:jersey-hk2:2.30'
 }
 
 dependencyManagement {
