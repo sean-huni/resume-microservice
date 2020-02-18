@@ -1,10 +1,8 @@
 package xyz.seanhuni.resume.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
+@Data
 public class QuestionInfoDto {
     private Integer id;
     private Integer questAnsId;
