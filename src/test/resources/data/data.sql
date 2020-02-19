@@ -1,14 +1,14 @@
 -- Q1
 INSERT INTO dr_schema.quest_ans (id, quest, ans, version, DT_CREATED, DT_UPDATED)
 VALUES (1, 'Can you show us the way with a quick intro about yourself',
-        'Most people know me as Kudzai or Sean. I am an experienced Software Engineer. My passion is in designing, modelling & developing software systems that can do some cool stuff with Machine Learning.',
+        'Most people know me as a Java/Spring Boot Software Engineer or Deep Learning Guru.',
         1,
         CURRENT_TIMESTAMP(),
         CURRENT_TIMESTAMP());
 
 -- Q2
 INSERT INTO dr_schema.quest_ans (id, quest, ans, version, DT_CREATED, DT_UPDATED)
-VALUES (2, 'In just 40 words or so, tell us more about who you are',
+VALUES (2, 'In just a few words or so, tell us more about who you are',
         'I''m usually involved in the full-lifecycle of software projects,since I''m good in almost all aspects concerned with software development. That''s what I enjoy doing and it enables me to put Bread & Butter on the table.',
         1,
         CURRENT_TIMESTAMP(),
@@ -54,7 +54,7 @@ VALUES (3, (SELECT max(id)
 INSERT INTO dr_schema.quest_ans (id, quest, ans, version, DT_CREATED, DT_UPDATED)
 VALUES (4,
         'What software tools are you good at',
-        'I''ve done several projects using software tools such as; MATLAB R2015, Java, Spring Framework, Jenkins, Gradle, Twitter Bootstrap, Bower, HTML5, JavaScript, JQuery, JSP, JPA, JPQL. Interesting projects include a lot of these awesome latest software tools.',
+        'I''ve done several projects using software tools such as; MATLAB R2015, Java, Spring Boot, Jenkins, Gradle, Twitter Bootstrap, Angular 8, HTML5, JavaScript, JQuery, JSP, JPA, JPQL. Interesting projects include a lot of these awesome latest software tools.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q5
@@ -148,7 +148,7 @@ VALUES (11, (SELECT max(id) FROM dr_schema.quest_ans), 'Sports: indoor soccer (a
 
 -- Q7.2
 INSERT INTO dr_schema.quest_info (id, QUEST_ANS_ID, B_INFO, version, DT_CREATED, DT_UPDATED)
-VALUES (12, (SELECT max(id) FROM dr_schema.quest_ans), 'Action: Sky-Diving, Go-Karting, Jet-Skiing.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+VALUES (12, (SELECT max(id) FROM dr_schema.quest_ans), 'Action: Skydiving, Go-Karting, Jet-Skiing.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q7.3
 INSERT INTO dr_schema.quest_info (id, QUEST_ANS_ID, B_INFO, version, DT_CREATED, DT_UPDATED)
@@ -157,12 +157,12 @@ VALUES (13, (SELECT max(id) FROM dr_schema.quest_ans), 'Adventure: Exploring oth
 
 -- Q7.4
 INSERT INTO dr_schema.quest_info (id, QUEST_ANS_ID, B_INFO, version, DT_CREATED, DT_UPDATED)
-VALUES (14, (SELECT max(id) FROM dr_schema.quest_ans), 'Computer Gaming: I think of this activity as a way of imitating reality through Simulation Training e.g Aviation Industries. I am also curious of how Machine Learning has been applied to improve computer graphics in gaming e.g. Grand Theft Auto V - ''Alireza Shafaei, a ''PhD student AT UBC'' Play and Learn: Using Video Games to Train Computer Vision Models.',
+VALUES (14, (SELECT max(id) FROM dr_schema.quest_ans), 'Computer Gaming: I think of this activity as a way of imitating reality through Simulation Training e.g Aviation Industries. I am also curious of how Deep Learning has been applied to improve computer graphics in gaming e.g. Grand Theft Auto V - ''Alireza Shafaei, a ''PhD student AT UBC'' Play and Learn: Using Video Games to Train Computer Vision Models.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q8
 INSERT INTO dr_schema.quest_ans (id, quest, ans, version, DT_CREATED, DT_UPDATED)
-VALUES (8, 'Anything else that you like doing', 'Yes of course, besides building my career from teamwork and practical experience alone, we live in an era where good education is free. In my relaxing time I participate in free-online courses from world-class universities. The likes of Stanford University, University of California, Johns Hopkins University, University of Cape Town e.t.c. My attitude towards my career is equipped with a sort of a mindset that embraces continuous-learning/sharing knowledge through: ',
+VALUES (8, 'Anything else that you like doing', 'Yes of course, besides building my career from teamwork and practical experience alone, we live in an era where good education is free. In my relaxing time I participate in free-online courses from world-class universities. The likes of Stanford University, University of California, University of Toronto, University of Liverpool e.t.c. My attitude towards my career is equipped with a sort of a mindset that embraces continuous-learning/sharing knowledge through: ',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q8.1

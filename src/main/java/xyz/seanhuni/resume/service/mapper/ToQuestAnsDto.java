@@ -13,6 +13,10 @@ import java.util.stream.Collectors;
 public class ToQuestAnsDto implements Converter<QuestionAns, QuestAnsDto> {
     private Converter<QuestionInfo, QuestionInfoDto> questionInfoDtoConverter;
 
+    public ToQuestAnsDto(Converter<QuestionInfo, QuestionInfoDto> questionInfoDtoConverter) {
+        this.questionInfoDtoConverter = questionInfoDtoConverter;
+    }
+
     /**
      * Convert the source object of type {@code S} to target type {@code T}.
      *

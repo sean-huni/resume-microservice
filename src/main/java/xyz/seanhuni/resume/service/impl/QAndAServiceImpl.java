@@ -8,6 +8,7 @@ import xyz.seanhuni.resume.persistence.repo.QAndARepo;
 import xyz.seanhuni.resume.service.QAndAService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class QAndAServiceImpl implements QAndAService {
@@ -23,7 +24,7 @@ public class QAndAServiceImpl implements QAndAService {
 
     @Override
     public List<QuestAnsDto> findAll() {
-        return null;
+        return qAndARepo.findAll().stream().map(qa -> questAnsDtoConverter.convert(qa)).collect(Collectors.toList());
     }
 
     @Override
