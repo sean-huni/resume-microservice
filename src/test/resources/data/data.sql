@@ -234,13 +234,14 @@ VALUES (7, STR_TO_DATE('01-02-2013', '%d-%m-%Y'), STR_TO_DATE('01-07-2014', '%d-
 # Populating Responsibility Config-Data
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
-VALUES (1, 1, 'Continuous Professional Development (CPD) – Special emphasis on continuous learning, acquiring
-new knowledge and skills to enhancing the level of professional competence within the modern
-industry.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+VALUES (1, 1,
+        'Continuous Professional Development (CPD) – Special emphasis on continuous learning, acquiring new knowledge and skills to enhancing the level of professional competence within the modern industry.',
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
-VALUES (2, 1, 'Designing, developing and implementing redundant cloud-driven software solutions that are scalable
-on demand, billable per usage, and reliable to end-users with minimal downtime.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+VALUES (2, 1,
+        'Designing, developing and implementing redundant cloud-driven software solutions that are scalable on demand, billable per usage, and reliable to end-users with minimal downtime.',
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, DT_CREATED, DT_UPDATED)
 VALUES (3, 1, 'Supporting & maintaining existing Spring Cloud Netflix software systems.', 1,
