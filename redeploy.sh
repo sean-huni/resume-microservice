@@ -8,16 +8,14 @@ redeploy() {
 }
 
 build() {
-   docker build -f Dockerfile -t resume-ms-img .
+  docker build -f Dockerfile -t resume-ms-img .
 }
-
 
 # Tag-And-Push Script to tag & push the app
-tagAndPush(){
-    docker tag resume-ms-img:latest s34n/resume-ms-img:latest
-    docker push s34n/resume-ms-img:latest
+tagAndPush() {
+  docker tag resume-ms-img:latest s34n/resume-ms-img:latest
+  docker push s34n/resume-ms-img:latest
 }
-
 
 if [[ ! -z "$(docker container ps | grep resume-ms)" ]]; then
   echo "Resume Microservice Docker Container Found"
