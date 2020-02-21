@@ -3,6 +3,7 @@ RUN mkdir -p /app/web/
 COPY build/libs/resume-ms.jar /app/web/resume-ms.jar
 COPY src/main/resources/data/data.sql /app/web/scripts/data.sql
 RUN apt-get update -y
+RUN apt-get install -y net-tools
 RUN apt-get install -y vim
 RUN apt-get install curl -y
 RUN apt-get install -y procps
