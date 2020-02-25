@@ -12,6 +12,7 @@ public class EducationDto {
     private LocalDateTime dtStart;
     private LocalDateTime dtEnd;
     private String inst;
+    private String loca;
     private Boolean currQ;
     private String qual;
     private String highs;

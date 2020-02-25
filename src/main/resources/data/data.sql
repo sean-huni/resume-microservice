@@ -193,32 +193,32 @@ VALUES (18, (SELECT max(id)
 -- # TRUNCATE table responsibility;
 -- # SET FOREIGN_KEY_CHECKS = 1;
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, location, natow, version, dt_created, dt_updated)
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
 VALUES (1, STR_TO_DATE('01-07-2019', '%d-%m-%Y'), STR_TO_DATE('20-04-1900', '%d-%m-%Y'), TRUE,
         'Founder & Software Engineer', 'Alpha Zeus', 'Norscot, ZAF', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, location, natow, version, dt_created, dt_updated)
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
 VALUES (2, STR_TO_DATE('01-03-2019', '%d-%m-%Y'), STR_TO_DATE('20-04-1900', '%d-%m-%Y'), TRUE,
         'Senior Java Consultant', 'Britehouse Mobility/Standard Bank', 'Sandton, ZAF','Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, location, natow, version, dt_created, dt_updated)
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
 VALUES (3, STR_TO_DATE('19-12-2015', '%d-%m-%Y'), STR_TO_DATE('30-04-2019', '%d-%m-%Y'), FALSE,
         'Co-Founder & ML Engineer (Part-Time)', 'Tech Company Group', 'Sydney, AUS', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, location, natow, version, dt_created, dt_updated)
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
 VALUES (4, STR_TO_DATE('30-01-2017', '%d-%m-%Y'), STR_TO_DATE('31-08-2018', '%d-%m-%Y'), FALSE,
         'Java Consultant', 'Tangent Solutions/African Bank', 'Bryanston, ZAF','Responsibilities: ', 1, CURRENT_TIMESTAMP(),
         CURRENT_TIMESTAMP()); # Fix the date, Currently working until NOW checkbox.
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, location, natow, version, dt_created, dt_updated)
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
 VALUES (5, STR_TO_DATE('16-04-2016', '%d-%m-%Y'), STR_TO_DATE('31-07-2016', '%d-%m-%Y'), FALSE, 'Java Operations Support',
         'VAS-X/Cell C', 'Woodmead, ZAF','Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, location,  natow, version, dt_created, dt_updated)
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca,  natow, version, dt_created, dt_updated)
 VALUES (6, STR_TO_DATE('01-03-2015', '%d-%m-%Y'), STR_TO_DATE('30-06-2015', '%d-%m-%Y'), FALSE, 'Java Software Developer',
         'ECN/Nashua', 'Midrand, ZAF','Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, location, natow, version, dt_created, dt_updated)
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
 VALUES (7, STR_TO_DATE('01-02-2013', '%d-%m-%Y'), STR_TO_DATE('01-07-2014', '%d-%m-%Y'), FALSE, 'Java Software Developer',
         'Integrity IT Solutions', 'Centurion, ZAF','Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
@@ -354,7 +354,7 @@ VALUES (33, 7, 'GSM & SMS enabled Memeza Alarm System.', 1, current_timestamp(),
 INSERT INTO dr_schema.education (ID, DT_START, DT_END, INST, loca, QUAL, HIGHS, O_GRADE, CURRQ, VERSION, dt_created,
                                  dt_updated)
 VALUES (1, STR_TO_DATE('02-05-2017', '%d-%m-%Y'), STR_TO_DATE('03-06-2017', '%d-%m-%Y'),
-        'Udemy', 'Online',
+        'Udemy', 'Online (Coursera)',
         '<a type="button" class="btn btn-outline-success" target="_blank" href="assets/download/UC-4C1R999B.pdf">Cert in Spring Core Advanced</a>',
         'Aspect Oriented Programming, Spring-MVC, Spring Security, Spring Data JPA, Spring Application Events.',
         '{Completed}', 0, 1, current_timestamp(), current_timestamp());
@@ -377,7 +377,7 @@ VALUES (3, STR_TO_DATE('03-10-2013', '%d-%m-%Y'), STR_TO_DATE('22-07-2016', '%d-
 INSERT INTO dr_schema.education (id, DT_START, DT_END, INST, loca, QUAL, HIGHS, O_GRADE, CURRQ, VERSION, dt_created,
                                  dt_updated)
 VALUES (4, STR_TO_DATE('12-10-2015', '%d-%m-%Y'), STR_TO_DATE('19-12-2015', '%d-%m-%Y'),
-        'Stanford University, USA', 'Online',
+        'Stanford University, USA', 'Online (Coursera)',
         '<a type="button" class="btn btn-outline-success" target="_blank" href="https://www.coursera.org/account/accomplishments/records/Y9GPAXXLQQ4X">Cert in Machine Learning</a>',
         'Linear/Logistic Regression, SVM, PCA, Neural Networks, Photo ORC.',
         '{Grade Achieved: 100%}', 0, 1, current_timestamp(),

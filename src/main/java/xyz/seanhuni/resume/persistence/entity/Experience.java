@@ -25,6 +25,7 @@ public class Experience extends AbstractDomainClass {
     private LocalDateTime dtStart;
     private LocalDateTime dtEnd;
     private String desig;
+    private String loca;
     private String natow;
     private Boolean currP;
 
