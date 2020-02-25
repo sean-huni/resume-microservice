@@ -18,6 +18,7 @@ public class ToEducation implements Converter<EducationDto, Education> {
         education.setDtStart(source.getDtStart());
         education.setDtEnd(source.getDtEnd());
         education.setInst(source.getInst());
+        education.setLoca(source.getLoca());
         education.setCurrQ(source.getCurrQ());
         education.setQual(source.getQual());
         education.setHighs(source.getHighs());
