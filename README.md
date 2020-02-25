@@ -5,7 +5,7 @@ Gone are the days of handing out a copy of the paper CV. This project aims to ex
 
 # Tech-Stack
    - Java SpringBoot Microservice.
-   - Angular 8 [UI-Single Page Application](https://github.com/sean-huni/resume-user-interface)
+   - Angular 9 [UI-Single Page Application](https://github.com/sean-huni/resume-user-interface)
    - JPA-Hibernate
    - MariaDB
 

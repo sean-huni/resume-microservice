@@ -6,8 +6,12 @@ plugins {
 }
 
 group = 'xyz.seanhuni'
-version = '0.0.1-SNAPSHOT'
+version = ''
 sourceCompatibility = '10'
+
+archivesBaseName = 'resume-ms'
+jar.archiveName = 'resume-ms.jar'
+
 
 configurations {
     developmentOnly

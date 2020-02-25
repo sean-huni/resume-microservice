@@ -12,7 +12,7 @@ spring:
   datasource:
     platform: mysql
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/dr_schema?createDatabaseIfNotExist=true
+    url: jdbc:mariadb://127.0.0.1:3306/dr_schema?createDatabaseIfNotExist=true
     username:
     password:
     hikari:
