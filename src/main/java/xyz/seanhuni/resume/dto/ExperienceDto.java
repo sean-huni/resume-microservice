@@ -16,6 +16,7 @@ public class ExperienceDto {
     private LocalDateTime dtStart;
     private LocalDateTime dtEnd;
     private String desig;
+    private String comp;
     private String loca;
     private String natow;
     private Boolean currP;
