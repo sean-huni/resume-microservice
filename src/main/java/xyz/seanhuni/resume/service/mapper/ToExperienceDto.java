@@ -26,6 +26,7 @@ public class ToExperienceDto implements Converter<Experience, ExperienceDto> {
         experienceDto.setDtStart(source.getDtStart());
         experienceDto.setDtEnd(source.getDtEnd());
         experienceDto.setDesig(source.getDesig());
+        experienceDto.setComp(source.getComp());
         experienceDto.setLoca(source.getLoca());
         experienceDto.setNatow(source.getNatow());
         experienceDto.setCurrP(source.getCurrP());
@@ -34,6 +35,5 @@ public class ToExperienceDto implements Converter<Experience, ExperienceDto> {
         experienceDto.setDtCreated(source.getDtCreated());
         experienceDto.setResponsibilities(source.getResponsibilities());
         return experienceDto;
-
     }
 }

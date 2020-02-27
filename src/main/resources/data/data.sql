@@ -362,7 +362,7 @@ VALUES (1, STR_TO_DATE('02-05-2017', '%d-%m-%Y'), STR_TO_DATE('03-06-2017', '%d-
 INSERT INTO dr_schema.education (id, DT_START, DT_END, INST, loca, QUAL, HIGHS, O_GRADE, CURRQ, VERSION, dt_created,
                                  dt_updated)
 VALUES (2, STR_TO_DATE('02-10-2016', '%d-%m-%Y'), STR_TO_DATE('06-01-2017', '%d-%m-%Y'),
-        'University of Toronto, Canada', 'Online (Coursera)',
+        'University of Toronto', 'Toronto, Canada (Coursera)',
         '<a type="button" class="btn btn-outline-success" target="_blank" href="https://www.coursera.org/account/accomplishments/records/FBTBQ9USJ3CB">Cert in Neural Networks</a>',
         'Convolutional Nets, Recurrent (LSTM) Nets, Echo State Nets, Hopefield Nets, R.B.M, D.B.Ns, G.A.Ns.',
         '{Grade Achieved: 100%}', 0, 1, current_timestamp(), current_timestamp());
@@ -377,7 +377,7 @@ VALUES (3, STR_TO_DATE('03-10-2013', '%d-%m-%Y'), STR_TO_DATE('22-07-2016', '%d-
 INSERT INTO dr_schema.education (id, DT_START, DT_END, INST, loca, QUAL, HIGHS, O_GRADE, CURRQ, VERSION, dt_created,
                                  dt_updated)
 VALUES (4, STR_TO_DATE('12-10-2015', '%d-%m-%Y'), STR_TO_DATE('19-12-2015', '%d-%m-%Y'),
-        'Stanford University, USA', 'Online (Coursera)',
+        'Stanford University', 'California, USA (Coursera)',
         '<a type="button" class="btn btn-outline-success" target="_blank" href="https://www.coursera.org/account/accomplishments/records/Y9GPAXXLQQ4X">Cert in Machine Learning</a>',
         'Linear/Logistic Regression, SVM, PCA, Neural Networks, Photo ORC.',
         '{Grade Achieved: 100%}', 0, 1, current_timestamp(),

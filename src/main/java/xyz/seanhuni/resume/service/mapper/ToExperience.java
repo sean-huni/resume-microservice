@@ -25,6 +25,7 @@ public class ToExperience implements Converter<ExperienceDto, Experience> {
         experience.setDtStart(source.getDtStart());
         experience.setDtEnd(source.getDtEnd());
         experience.setDesig(source.getDesig());
+        experience.setComp(source.getComp());
         experience.setLoca(source.getLoca());
         experience.setNatow(source.getNatow());
         experience.setCurrP(source.getCurrP());
