@@ -8,6 +8,8 @@ redeploy() {
 }
 
 build() {
+  ./gradlew clean
+  ./gradlew assemble
   docker build -f Dockerfile -t resume-ms-img .
 }
 
