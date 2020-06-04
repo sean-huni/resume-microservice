@@ -21,3 +21,17 @@ Launching the App with Gradle
     
 # Swagger-Docs
 Swagger Url: http://localhost:8080/swagger-ui.html
+
+# Deployment via Docker
+
+## From the Dev Machine
+ - Updated `s34n/resume-ms-img:<version>` of the app in run.sh
+ - sh run.sh
+ - `docker login --username s34n`
+ - Generate New Access Token >> for that machine on DockerHub
+   
+## From the Cloud-Env
+ - `sudo docker stop resume-ms && sudo docker rm resume-ms`
+ - `sudo docker pull s34n/resume-ms-img:<version>`
+ - `sudo docker run --name='resume-ms' -it --restart unless-stopped -p 8080:8080 s34n/resume-ms-img:<version>`
+ 
