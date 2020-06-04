@@ -1,5 +1,6 @@
-FROM openjdk:10-jre-slim
+FROM openjdk:11-jre-slim
 RUN mkdir -p /app/web/
+RUN bash -c 'touch /app/web/resume-ms.jar'
 COPY build/libs/resume-ms.jar /app/web/resume-ms.jar
 COPY src/main/resources/data/data.sql /app/web/scripts/data.sql
 RUN apt-get update -y
@@ -17,9 +18,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
      dpkg-reconfigure -f noninteractive tzdata
 RUN apt-get update -y
-VOLUME /tmp
 RUN java -version
 VOLUME /tmp
-RUN bash -c 'touch /app/web/resume-ms.jar'
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/web/resume-ms.jar"]
 EXPOSE 8080
