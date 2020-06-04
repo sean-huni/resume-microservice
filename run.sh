@@ -10,12 +10,13 @@ redeploy() {
 build() {
   ./gradlew clean
   ./gradlew assemble
-  docker build -f Dockerfile -t resume-ms-img .
+  #Remember to update the version
+  docker build -f Dockerfile -t resume-ms-img:4.2.4 .
 }
 
 # Tag-And-Push Script to tag & push the app
 tagAndPush() {
-  docker tag resume-ms-img:latest s34n/resume-ms-img:4.2.4
+  docker tag resume-ms-img:4.2.4 s34n/resume-ms-img:4.2.4
   docker push s34n/resume-ms-img:4.2.4
 }
 
