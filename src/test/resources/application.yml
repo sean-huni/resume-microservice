@@ -12,9 +12,9 @@ spring:
   datasource:
     platform: mysql
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://172.17.0.1:3306/dr_schema?createDatabaseIfNotExist=true
-    username:
-    password:
+    url: jdbc:mariadb://127.0.0.1:3306/dr_schema?createDatabaseIfNotExist=true
+    username: sean
+    password: p@ssw0rd
     hikari:
       auto-commit: true
 

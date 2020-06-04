@@ -7,7 +7,7 @@ plugins {
 
 group = 'xyz.seanhuni'
 version = ''
-sourceCompatibility = '10'
+sourceCompatibility = '11'
 
 archivesBaseName = 'resume-ms'
 jar.archiveName = 'resume-ms.jar'

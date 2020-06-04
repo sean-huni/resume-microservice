@@ -15,8 +15,8 @@ build() {
 
 # Tag-And-Push Script to tag & push the app
 tagAndPush() {
-  docker tag resume-ms-img:latest s34n/resume-ms-img:latest
-  docker push s34n/resume-ms-img:latest
+  docker tag resume-ms-img:4.2.2 s34n/resume-ms-img:4.2.2
+  docker push s34n/resume-ms-img:4.2.2
 }
 
 if [[ ! -z "$(docker container ps | grep resume-ms)" ]]; then

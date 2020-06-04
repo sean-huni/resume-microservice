@@ -8,7 +8,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 CREATE TABLE user
 (
     id        INT           NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    username  VARCHAR(64)   NOT NULL UNIQUE,
+    username  VARCHAR(255)  NOT NULL UNIQUE,
     password  VARCHAR(1000) NULL     DEFAULT NULL,
     enabled   BOOLEAN       NOT NULL,
     dtCreated TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -20,8 +20,8 @@ CREATE TABLE emailMsg
 (
     id        INT            NOT NULL AUTO_INCREMENT PRIMARY KEY,
     user_id   INT            NOT NULL,
-    name      VARCHAR(45)    NOT NULL,
-    subject   VARCHAR(145)   NOT NULL,
+    name      VARCHAR(255)   NOT NULL,
+    subject   VARCHAR(255)   NOT NULL,
     message   VARCHAR(20000) NOT NULL,
     dtSent    TIMESTAMP               DEFAULT CURRENT_TIMESTAMP,
     dtCreated TIMESTAMP      NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -30,9 +30,19 @@ CREATE TABLE emailMsg
     CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES user (id)
 );
 
-#
+# Table Updates
+
+alter table dr_schema.user
+    modify username varchar(255);
+
 alter table dr_schema.emailMsg
-    modify message varchar(2000);
+    modify name varchar(255);
+
+alter table dr_schema.emailMsg
+    modify subject varchar(255);
+
+alter table dr_schema.emailMsg
+    modify message varchar(20000);
 
 CREATE TABLE questAns
 (

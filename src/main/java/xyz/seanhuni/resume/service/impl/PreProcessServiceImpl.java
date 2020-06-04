@@ -1,6 +1,6 @@
 package xyz.seanhuni.resume.service.impl;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import xyz.seanhuni.resume.commons.Constants;
 import xyz.seanhuni.resume.dto.RespDto;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Slf4j
+@Log4j2
 @Service
 public class PreProcessServiceImpl implements PreprocessService {
     private static String VERSION;
@@ -43,16 +43,16 @@ public class PreProcessServiceImpl implements PreprocessService {
         InputDataValidation dataValidation = new InputDataValidation();
         StringFilter filter = new StringFilter();
         List<String> errors = new ArrayList<>();
-        if (uName == null || (uName.trim().length() < 3) || (uName.trim().length() > 25)) {
+        if (uName == null || (uName.trim().length() < 3) || (uName.trim().length() > 255)) {
             errors.add(Constants.CSTM_EXC_VIEW_FLD_NAME);
         }
-        if (uEmail == null || (uEmail.length() < 3) || (uEmail.length() > 75)) {
+        if (uEmail == null || (uEmail.length() < 3) || (uEmail.length() > 255)) {
             errors.add(Constants.CSTM_EXC_VIEW_FLD_EMAIL);
         }
-        if (uSubject == null || (uSubject.trim().length() < 3) || (uSubject.trim().length() > 75)) {
+        if (uSubject == null || (uSubject.trim().length() < 3) || (uSubject.trim().length() > 255)) {
             errors.add(Constants.CSTM_EXC_VIEW_FLD_SUBJECT);
         }
-        if (uMessage == null || (uMessage.trim().length() < 3) || (uMessage.trim().length() > 2000)) {
+        if (uMessage == null || (uMessage.trim().length() < 3) || (uMessage.trim().length() > 20000)) {
             errors.add(Constants.CSTM_EXC_VIEW_FLD_MESSAGE);
         }
 
