@@ -11,13 +11,15 @@ build() {
   ./gradlew clean
   ./gradlew assemble
   #Remember to update the version
-  docker build -f Dockerfile -t resume-ms-img:4.2.4 .
+  ver="4.1.5"
+  rm version.txt && touch version.txt && echo $ver | tee -a version.txt
+  docker build -f Dockerfile -t resume-ms-img:$ver .
 }
 
 # Tag-And-Push Script to tag & push the app
 tagAndPush() {
-  docker tag resume-ms-img:4.2.4 s34n/resume-ms-img:4.2.4
-  docker push s34n/resume-ms-img:4.2.4
+  docker tag resume-ms-img:$ver s34n/resume-ms-img:$ver
+  docker push s34n/resume-ms-img:$ver
 }
 
 if [[ ! -z "$(docker container ps | grep resume-ms)" ]]; then
