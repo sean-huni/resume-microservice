@@ -1,24 +1,33 @@
 package xyz.seanhuni.resume.forms;
 
 import lombok.Data;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import static xyz.seanhuni.resume.commons.Constants.CSTM_EXC_VIEW_FLD_EMAIL;
+import static xyz.seanhuni.resume.commons.Constants.CSTM_EXC_VIEW_FLD_MESSAGE;
+import static xyz.seanhuni.resume.commons.Constants.CSTM_EXC_VIEW_FLD_NAME;
+import static xyz.seanhuni.resume.commons.Constants.CSTM_EXC_VIEW_FLD_SUBJECT;
+
 @Data
+@Validated
 public class EmailForm {
 
     @NotNull
-    @Size(max = 45, message = "Your Name should be at most 45 characters")
+    @Size(max = 255, min = 3, message = CSTM_EXC_VIEW_FLD_NAME)
     private String name;
     @NotNull
-    @Email
-    @Size(max = 75, min = 3, message = "Subject is restricted between 3 to 75 characters")
+    @Size(max = 255, min = 3, message = CSTM_EXC_VIEW_FLD_SUBJECT)
     private String subject;
-    @Size(max = 25, message = "Email should contain at most 25 characters")
+    @Email
+    @NotNull
+    @Size(max = 255, min = 3, message = CSTM_EXC_VIEW_FLD_EMAIL)
     private String email;
-    @Size(max = 900, min = 3, message = "Message is restricted between 3 to 900 characters in length.")
+    @NotNull
+    @Size(max = 20_000, min = 15, message = CSTM_EXC_VIEW_FLD_MESSAGE)
     private String message;
 
 }

@@ -1,13 +1,13 @@
 package xyz.seanhuni.resume.service.impl;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import net.sargue.mailgun.Configuration;
 import net.sargue.mailgun.Mail;
 import org.springframework.stereotype.Service;
 import xyz.seanhuni.resume.exception.EmailException;
 import xyz.seanhuni.resume.service.EmailService;
 
-@Slf4j
+@Log4j2
 @Service
 public class MailGunServiceImpl implements EmailService {
     private static final String WEB_MASTER_EMAIL = "sean2kay@gmail.com";

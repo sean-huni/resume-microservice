@@ -18,6 +18,8 @@ spring:
     hikari:
       auto-commit: true
     data: classpath*:data/data.sql
+  messages:
+    basename: i18/messages
 
 server:
   compression:
