@@ -1,8 +1,10 @@
 package xyz.seanhuni.resume.service.impl;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xyz.seanhuni.resume.commons.Constants;
+import xyz.seanhuni.resume.commons.FileReaderService;
 import xyz.seanhuni.resume.dto.RespDto;
 import xyz.seanhuni.resume.exception.EmailException;
 import xyz.seanhuni.resume.forms.EmailForm;
@@ -10,9 +12,8 @@ import xyz.seanhuni.resume.persistence.entity.EmailMsg;
 import xyz.seanhuni.resume.persistence.entity.User;
 import xyz.seanhuni.resume.persistence.repo.UserRepo;
 import xyz.seanhuni.resume.service.EmailService;
-import xyz.seanhuni.resume.service.PreprocessService;
-import xyz.seanhuni.resume.util.validation.InputDataValidation;
-import xyz.seanhuni.resume.util.validation.StringFilter;
+import xyz.seanhuni.resume.service.PreProcessService;
+import xyz.seanhuni.resume.util.InputDataValidation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,29 +21,72 @@ import java.util.Objects;
 
 @Log4j2
 @Service
-public class PreProcessServiceImpl implements PreprocessService {
-    private static String VERSION;
+public class PreProcessServiceImpl implements PreProcessService {
+    private final UserRepo userRepo;
     private EmailService emailService;
-    private UserRepo userRepo;
+    private InputDataValidation dataValidation;
+    private FileReaderService versionService;
 
-    public PreProcessServiceImpl(EmailService emailService, UserRepo userRepo) {
+    public PreProcessServiceImpl(EmailService emailService, UserRepo userRepo, InputDataValidation dataValidation) {
         this.emailService = emailService;
         this.userRepo = userRepo;
+        this.dataValidation = dataValidation;
     }
 
     @Override
-    public RespDto preprocessAndSendEmail(String uName, String uEmail, String uSubject, String uMessage) {
+    public RespDto preprocessAndSendEmail(String uName, String uEmail, String uSubject, String uMessage) throws EmailException {
+        List<String> errors = new ArrayList<>();
 
-        EmailForm valObj = null;
+        EmailForm valObj = validateEmailForm(uName, uEmail, uSubject, uMessage, errors);
+
+        RespDto emailResp = new RespDto();
+        if (errors.size() == 0 && Objects.nonNull(valObj.getEmail()) && !valObj.getEmail().trim().isEmpty()) {
+            EmailMsg emailMsg = linkEmailAndSendEmail(valObj);
+            emailResp.setRespMsg(emailMsg.getMessage());
+            emailResp.setName(emailMsg.getName());
+            emailResp.setSuccess(true);
+        } else {
+            emailResp.setSuccess(false);
+
+            errors.parallelStream().forEach(error -> emailResp.setRespMsg(String.format("%s\n%s", emailResp.getRespMsg(), error)));
+
+            if (!errors.isEmpty()) {
+                throw new EmailException(uName, emailResp.getRespMsg());
+            }
+        }
+        return emailResp;
+    }
+
+    private EmailMsg linkEmailAndSendEmail(EmailForm valObj) {
+        User userP;
+        EmailMsg emailMsg = new EmailMsg();
+
+        userP = userRepo.findByUsername(valObj.getEmail());
+
+        if (Objects.isNull(userP)) {
+            userP = new User();
+
+            userP.setUsername(valObj.getEmail());
+            userP.setEnabled(true);
+        }
+
+        userP.setVersion(getVersion());
+
+        emailMsg.setName(valObj.getName());
+        emailMsg.setSubject(valObj.getSubject());
+        emailMsg.setMessage(valObj.getMessage());
+
+        userP.addNewMsg(emailMsg);
+        saveToDBSendEmail(userP, emailMsg);
+        return emailMsg;
+    }
+
+    private EmailForm validateEmailForm(String uName, String uEmail, String uSubject, String uMessage, List<String> errors) {
+        EmailForm valObj = new EmailForm();
         if (uEmail != null) {
             uEmail = uEmail.trim();
         }
 
-        RespDto emailResp = new RespDto();
-
-        InputDataValidation dataValidation = new InputDataValidation();
-        StringFilter filter = new StringFilter();
-        List<String> errors = new ArrayList<>();
         if (uName == null || (uName.trim().length() < 3) || (uName.trim().length() > 255)) {
             errors.add(Constants.CSTM_EXC_VIEW_FLD_NAME);
         }
@@ -52,95 +96,47 @@ public class PreProcessServiceImpl implements PreprocessService {
         if (uSubject == null || (uSubject.trim().length() < 3) || (uSubject.trim().length() > 255)) {
             errors.add(Constants.CSTM_EXC_VIEW_FLD_SUBJECT);
         }
-        if (uMessage == null || (uMessage.trim().length() < 3) || (uMessage.trim().length() > 20000)) {
+        if (uMessage == null || (uMessage.trim().length() < 15) || (uMessage.trim().length() > 20_000)) {
             errors.add(Constants.CSTM_EXC_VIEW_FLD_MESSAGE);
         }
 
-
         if (errors.size() == 0) {
-
             //Validation for the String input values
             valObj = dataValidation.validator(uName, uSubject, uMessage);
-            valObj.setEmail(filter.emailValidator(uEmail) ? uEmail : null);
-
-            try {
-                if (valObj.getEmail() == null || valObj.getEmail().trim().equals(""))
-                    throw new EmailException("Null Email Address. Email failed validation!");
-            } catch (EmailException npe) {
-                log.warn("Empty email-address Field!", npe);
-                if (uEmail == null || uEmail.trim().equals("")) {
-                    errors.add(String.format("%s email address.", "Invalid"));
-                }
-            }
         }
 
-        if (errors.size() == 0 && Objects.nonNull(valObj)) {
-            User userP, userResp;
-            EmailMsg emailMsg = new EmailMsg();
-            List<EmailMsg> emailMsgList;
+        boolean isValidEmail = dataValidation.isValidEmail(uEmail);
+        valObj.setEmail(isValidEmail ? uEmail : null);
 
-            userP = userRepo.findByUsername(valObj.getEmail());
+        if (!isValidEmail) {
+            log.error("Invalid email-address!");
+            String emailAddressErrorMsg = Objects.isNull(valObj.getEmail()) || valObj.getEmail().trim().isEmpty() ? null : valObj.getEmail().trim();
+            emailAddressErrorMsg = Objects.nonNull(emailAddressErrorMsg) ? String.format("%s email address: %s", "Invalid", emailAddressErrorMsg) : String.format("%s email address.", "Invalid");
+            errors.add(emailAddressErrorMsg);
+        }
 
-            if (null == userP) {
-                userP = new User();
-                emailMsgList = new ArrayList<>();
+        return valObj;
+    }
 
-                userP.setUsername(valObj.getEmail());
-                userP.setEnabled(true);
-            } else {
-                emailMsgList = userP.getEmailMsg();
-            }
+    @Autowired
+    public void setVersionService(FileReaderService versionService) {
+        this.versionService = versionService;
+    }
 
-            log.info("Application Version: " + VERSION);
+    private int getVersion() {
+        //Set object version
+        String ver = versionService.getVersion();
+        log.debug("Version: {}", ver);
+        int version = Integer.parseInt(ver.replace(".", ""));
+        log.info("Integer Parsed Version: " + version);
+        return version;
+    }
 
-            try {
-                int version = Integer.parseInt(VERSION.replaceAll(".", ""));
-                log.info("Integer Parsed Version: " + version);
-                userP.setVersion(version);
-            } catch (Exception nfe) {
-                log.warn(nfe.getMessage());
-                userP.setVersion(300);
-            }
+    private void saveToDBSendEmail(User userP, EmailMsg emailMsg) throws EmailException {
+        User userResp = userRepo.save(userP);
 
-            emailMsg.setName(valObj.getName());
-            emailMsg.setSubject(valObj.getSubject());
-            emailMsg.setMessage(valObj.getMessage());
-
-            userP.addNewMsg(emailMsg);
-
-
-            //Email function here!!!
-            try {
-                userResp = userRepo.save(userP);
-
-                //Email function to send email to the user.
+        //Email function to send email to the user.
 //                emailService.sendAsyncMail(userResp.getUsername(), mailTo, mailTo, emailMsg.getSubject(), emailMsg.getMessage());
-                emailService.sendEmail(emailMsg.getName(), userResp.getUsername(), emailMsg.getSubject(), emailMsg.getMessage());
-                emailResp.setSuccess(true);
-            } catch (EmailException e) {
-                e.printStackTrace();
-                log.error(e.getMessage(), e);
-                emailResp.setSuccess(false);
-                emailResp.setRespMsg(e.getMessage());
-            }
-
-            //Sent the response here.
-            if (emailResp.isSuccess()) {
-                emailResp.setRespMsg(String.format("Thank you %s! \nYour email has been sent successfully." +
-                        "\n\nSean normally replies within 3hrs.", valObj.getName()));
-            } else {
-                String warnMsg = "Email sent with warnings.";
-                log.warn(warnMsg);
-                emailResp.setRespMsg(warnMsg);
-            }
-        } else {
-            emailResp.setSuccess(false);
-            boolean aBoolean = false;
-            for (String error : errors) {
-                emailResp.setRespMsg(aBoolean ? String.format("%s\n%s", emailResp.getRespMsg(), error) : String.format("%s", error));
-                aBoolean = true;
-            }
-        }
-        return emailResp;
+        emailService.sendEmail(emailMsg.getName(), userResp.getUsername(), emailMsg.getSubject(), emailMsg.getMessage());
     }
 }

@@ -17,6 +17,9 @@ spring:
     password: p@ssw0rd
     hikari:
       auto-commit: true
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
 
 server:
   compression:
