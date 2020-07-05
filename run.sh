@@ -7,13 +7,14 @@ redeploy() {
   docker run --name='resume-ms' -d -it -p 8080:8080 resume-ms-img && docker logs resume-ms -f
 }
 
-ver="5.0.2"
+ver='5.0.4'
+verFile='src/main/resources/version.yml'
 
 build() {
+  #Remember to update the version
+  rm $verFile && touch $verFile && echo 'version: '$ver | tee -a $verFile
   ./gradlew clean
   ./gradlew assemble
-  #Remember to update the version
-  rm version.txt && touch version.txt && echo $ver | tee -a version.txt
   docker build -f Dockerfile -t resume-ms-img:$ver .
 }
 
