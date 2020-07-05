@@ -33,7 +33,7 @@ public class EmailExceptionHandler {
         emailErrorResp = String.format(emailErrorResp, emailException.getName());
         log.error(emailErrorResp);
         log.error(emailException.getMessage(), emailException);
-        RespDto cer = new RespDto(emailException.getName(), false, emailErrorResp, LocalDateTime.now());
+        RespDto cer = new RespDto(emailException.getName(), false, emailErrorResp, null, LocalDateTime.now());
         log.debug("Error Response: {}", cer);
         return new ResponseEntity<>(cer, HttpStatus.BAD_REQUEST);
     }
@@ -43,8 +43,8 @@ public class EmailExceptionHandler {
     @ResponseBody
     ResponseEntity<RespDto> invalidInputHandler(MethodArgumentNotValidException invalidException) {
         String emailErrorResp = messageSource.getMessage("email.400.101", null, locale);
-        emailErrorResp = String.format("%s\n%s", emailErrorResp, invalidException);
-        RespDto resp = new RespDto(null, false, emailErrorResp, LocalDateTime.now());
+        emailErrorResp = String.format("%s", emailErrorResp);
+        RespDto resp = new RespDto(null, false, emailErrorResp, new FieldErrorExtractor().extractErrorObjects(invalidException.getBindingResult().getFieldErrors()), LocalDateTime.now());
         return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
     }
 }

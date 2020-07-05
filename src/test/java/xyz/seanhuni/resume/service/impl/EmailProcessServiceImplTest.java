@@ -11,8 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import xyz.seanhuni.resume.dto.RespDto;
 import xyz.seanhuni.resume.exception.EmailException;
+import xyz.seanhuni.resume.service.EmailProcessService;
 import xyz.seanhuni.resume.service.EmailService;
-import xyz.seanhuni.resume.service.PreProcessService;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -24,12 +24,12 @@ import static org.mockito.Mockito.verify;
 @Log4j2
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-class PreProcessServiceImplTest {
+class EmailProcessServiceImplTest {
     @MockBean
     private EmailService emailService;
 
     @Autowired
-    private PreProcessService preprocessService;
+    private EmailProcessService preprocessService;
 
     @BeforeEach
     void setUp() {

@@ -9,8 +9,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -20,6 +22,8 @@ public class RespDto {
     @Getter(AccessLevel.NONE)
     private Boolean success;
     private String respMsg;
+    @Setter(AccessLevel.NONE)
+    private List<Error> errors;
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime timestamp;
