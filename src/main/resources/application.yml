@@ -20,6 +20,8 @@ spring:
     data: classpath*:data/data.sql
   messages:
     basename: i18/messages
+  profiles:
+    active: live
 
 server:
   compression:
