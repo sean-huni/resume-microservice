@@ -9,7 +9,7 @@ VALUES (1, 'Can you show us the way with a quick intro about yourself',
 -- Q2
 INSERT INTO dr_schema.quest_ans (id, quest, ans, version, dt_created, dt_updated)
 VALUES (2, 'In just a few words or so, tell us more about who you are',
-        'I''m usually involved in the full-lifecycle of software projects,since I''m good in almost all aspects concerned with software development. That''s what I enjoy doing and it enables me to put Bread & Butter on the table.',
+        'I''m usually involved in the full-lifecycle of software projects, since I''m good in almost all aspects concerned with software development. That''s what I enjoy doing and it enables me to put Bread & Butter on the table.',
         1,
         CURRENT_TIMESTAMP(),
         CURRENT_TIMESTAMP());
@@ -54,7 +54,7 @@ VALUES (3, (SELECT max(id)
 INSERT INTO dr_schema.quest_ans (id, quest, ans, version, dt_created, dt_updated)
 VALUES (4,
         'What software tools are you good at',
-        'I''ve done several projects using software tools such as; MATLAB R2015, Java, Spring Boot, Jenkins, Gradle, Twitter Bootstrap, Angular 8, HTML5, JavaScript, JQuery, JSP, JPA, JPQL. Interesting projects include a lot of these awesome latest software tools.',
+        'I''ve done several projects using software tools such as; MATLAB R2015, Java, Spring Boot, Jenkins, Gradle, Twitter Bootstrap, Angular 10, HTML5, JavaScript, JQuery, JSP, JPA, JPQL. Interesting projects include a lot of these awesome latest software tools.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 -- Q5
@@ -317,7 +317,7 @@ VALUES (24, 5, 'Executed work strictly according to allocated support tickets.',
         current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (25, 6, 'EJB3, Java EE, Java SE, JPA2, Spring MVC, JavaScript, HTML, JQuery.', 1, current_timestamp(),
+VALUES (25, 6, 'EJB, Java EE, Java SE, JPA2, Spring MVC, JavaScript, HTML, JQuery.', 1, current_timestamp(),
         current_timestamp());
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
 VALUES (26, 6, 'Application Servers (Glassfish, JBoss).', 1, current_timestamp(), current_timestamp());
