@@ -7,11 +7,12 @@ redeploy() {
   docker run --name='resume-ms' -d -it -p 8080:8080 resume-ms-img && docker logs resume-ms -f
 }
 
+ver="5.0.0"
+
 build() {
   ./gradlew clean
   ./gradlew assemble
   #Remember to update the version
-  ver="4.1.5"
   rm version.txt && touch version.txt && echo $ver | tee -a version.txt
   docker build -f Dockerfile -t resume-ms-img:$ver .
 }
