@@ -15,7 +15,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-//                .antMatchers("/login").permitAll()
+                .antMatchers("/login").permitAll()
                 .antMatchers("/**").hasIpAddress("45.63.96.137")
                 .anyRequest().authenticated()
                 .and()

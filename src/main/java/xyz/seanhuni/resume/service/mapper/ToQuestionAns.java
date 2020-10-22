@@ -2,10 +2,10 @@ package xyz.seanhuni.resume.service.mapper;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
-import xyz.seanhuni.resume.dto.QuestAnsDto;
-import xyz.seanhuni.resume.dto.QuestionInfoDto;
 import xyz.seanhuni.resume.persistence.entity.QuestionAns;
 import xyz.seanhuni.resume.persistence.entity.QuestionInfo;
+import xyz.seanhuni.resume.pojo.resp.QuestAnsDto;
+import xyz.seanhuni.resume.pojo.resp.QuestionInfoDto;
 
 import java.util.stream.Collectors;
 

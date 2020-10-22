@@ -3,7 +3,7 @@ package xyz.seanhuni.resume.rest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import xyz.seanhuni.resume.dto.RecommendDto;
+import xyz.seanhuni.resume.pojo.resp.RecommendDto;
 import xyz.seanhuni.resume.service.RecommendService;
 
 import java.util.List;

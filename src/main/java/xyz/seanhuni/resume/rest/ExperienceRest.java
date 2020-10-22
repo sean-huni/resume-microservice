@@ -4,7 +4,7 @@ package xyz.seanhuni.resume.rest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import xyz.seanhuni.resume.dto.ExperienceDto;
+import xyz.seanhuni.resume.pojo.resp.ExperienceDto;
 import xyz.seanhuni.resume.service.ExperienceService;
 
 import java.util.List;
@@ -24,4 +24,13 @@ public class ExperienceRest {
     public List<ExperienceDto> findAllExperience() {
         return experienceService.findAll();
     }
+
+
+//    @GetMapping
+//    public Response findAllExp() {
+//        Response.Status status = Response.Status.OK;
+//        return  Response.status(status).entity(status.getReasonPhrase()).build();
+//    }
+
+
 }

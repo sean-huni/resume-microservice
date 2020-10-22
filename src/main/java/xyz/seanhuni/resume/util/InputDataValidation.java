@@ -1,6 +1,6 @@
 package xyz.seanhuni.resume.util;
 
-import xyz.seanhuni.resume.forms.EmailForm;
+import xyz.seanhuni.resume.pojo.req.EmailForm;
 
 public interface InputDataValidation {
 

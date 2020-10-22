@@ -2,9 +2,9 @@ package xyz.seanhuni.resume.service.impl;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Service;
-import xyz.seanhuni.resume.dto.QuestAnsDto;
 import xyz.seanhuni.resume.persistence.entity.QuestionAns;
 import xyz.seanhuni.resume.persistence.repo.QAndARepo;
+import xyz.seanhuni.resume.pojo.resp.QuestAnsDto;
 import xyz.seanhuni.resume.service.QAndAService;
 
 import java.util.List;

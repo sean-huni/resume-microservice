@@ -12,9 +12,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import xyz.seanhuni.resume.dto.RespDto;
 import xyz.seanhuni.resume.exception.EmailException;
-import xyz.seanhuni.resume.forms.EmailForm;
+import xyz.seanhuni.resume.pojo.req.EmailForm;
+import xyz.seanhuni.resume.pojo.resp.RespDto;
 import xyz.seanhuni.resume.service.EmailProcessService;
 
 import java.time.LocalDateTime;

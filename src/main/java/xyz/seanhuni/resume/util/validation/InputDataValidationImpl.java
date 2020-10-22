@@ -2,7 +2,7 @@ package xyz.seanhuni.resume.util.validation;
 
 
 import org.springframework.stereotype.Component;
-import xyz.seanhuni.resume.forms.EmailForm;
+import xyz.seanhuni.resume.pojo.req.EmailForm;
 import xyz.seanhuni.resume.util.InputDataValidation;
 import xyz.seanhuni.resume.util.StringFilter;
 

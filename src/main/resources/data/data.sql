@@ -192,156 +192,222 @@ VALUES (18, (SELECT max(id)
 -- # TRUNCATE table experience;
 -- # TRUNCATE table responsibility;
 -- # SET FOREIGN_KEY_CHECKS = 1;
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created,
+                                  dt_updated)
+VALUES (1, STR_TO_DATE('04-07-2020', '%d-%m-%Y'), STR_TO_DATE('20-04-1900', '%d-%m-%Y'), TRUE,
+        'Senior Software Engineer Consultant', 'Mpilo Tech', 'Johannesburg, ZAF', 'Responsibilities: ', 1,
+        CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
-VALUES (1, STR_TO_DATE('01-07-2019', '%d-%m-%Y'), STR_TO_DATE('20-04-1900', '%d-%m-%Y'), TRUE,
-        'Founder & Software Engineer', 'Alpha Zeus', 'Norscot, ZAF', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created,
+                                  dt_updated)
+VALUES (2, STR_TO_DATE('01-07-2019', '%d-%m-%Y'), STR_TO_DATE('20-04-1900', '%d-%m-%Y'), TRUE,
+        'Founder & Software Engineer', 'Alpha Zeus', 'Norscot, ZAF', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(),
+        CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
-VALUES (2, STR_TO_DATE('01-03-2019', '%d-%m-%Y'), STR_TO_DATE('20-04-1900', '%d-%m-%Y'), TRUE,
-        'Senior Java Consultant', 'Britehouse Mobility/Standard Bank', 'Sandton, ZAF','Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created,
+                                  dt_updated)
+VALUES (3, STR_TO_DATE('01-03-2019', '%d-%m-%Y'), STR_TO_DATE('20-04-1900', '%d-%m-%Y'), TRUE,
+        'Senior Java Software Engineer Consultant', 'Standard Bank', 'Sandton, ZAF', 'Responsibilities: ', 1,
+        CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
-VALUES (3, STR_TO_DATE('19-12-2015', '%d-%m-%Y'), STR_TO_DATE('30-04-2019', '%d-%m-%Y'), FALSE,
-        'Co-Founder & ML Engineer (Part-Time)', 'Tech Company Group', 'Sydney, AUS', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created,
+                                  dt_updated)
+VALUES (4, STR_TO_DATE('19-12-2015', '%d-%m-%Y'), STR_TO_DATE('30-04-2019', '%d-%m-%Y'), FALSE,
+        'Co-Founder & ML Engineer (Part-Time)', 'Tech Company Group', 'Sydney, AUS', 'Responsibilities: ', 1,
+        CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
-VALUES (4, STR_TO_DATE('30-01-2017', '%d-%m-%Y'), STR_TO_DATE('31-08-2018', '%d-%m-%Y'), FALSE,
-        'Java Consultant', 'Tangent Solutions/African Bank', 'Bryanston, ZAF','Responsibilities: ', 1, CURRENT_TIMESTAMP(),
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created,
+                                  dt_updated)
+VALUES (5, STR_TO_DATE('30-01-2017', '%d-%m-%Y'), STR_TO_DATE('31-08-2018', '%d-%m-%Y'), FALSE,
+        'Java Consultant', 'Tangent Solutions/African Bank', 'Bryanston, ZAF', 'Responsibilities: ', 1,
+        CURRENT_TIMESTAMP(),
         CURRENT_TIMESTAMP()); # Fix the date, Currently working until NOW checkbox.
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
-VALUES (5, STR_TO_DATE('16-04-2016', '%d-%m-%Y'), STR_TO_DATE('31-07-2016', '%d-%m-%Y'), FALSE, 'Java Operations Support',
-        'VAS-X/Cell C', 'Woodmead, ZAF','Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created,
+                                  dt_updated)
+VALUES (6, STR_TO_DATE('16-04-2016', '%d-%m-%Y'), STR_TO_DATE('31-07-2016', '%d-%m-%Y'), FALSE,
+        'Java Operations Support',
+        'VAS-X/Cell C', 'Woodmead, ZAF', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca,  natow, version, dt_created, dt_updated)
-VALUES (6, STR_TO_DATE('01-03-2015', '%d-%m-%Y'), STR_TO_DATE('30-06-2015', '%d-%m-%Y'), FALSE, 'Java Software Developer',
-        'ECN/Nashua', 'Midrand, ZAF','Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created,
+                                  dt_updated)
+VALUES (7, STR_TO_DATE('01-03-2015', '%d-%m-%Y'), STR_TO_DATE('30-06-2015', '%d-%m-%Y'), FALSE,
+        'Java Software Developer',
+        'ECN/Nashua', 'Midrand, ZAF', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
-INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created, dt_updated)
-VALUES (7, STR_TO_DATE('01-02-2013', '%d-%m-%Y'), STR_TO_DATE('01-07-2014', '%d-%m-%Y'), FALSE, 'Java Software Developer',
-        'Integrity IT Solutions', 'Centurion, ZAF','Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+INSERT INTO dr_schema.experience (id, dt_start, dt_end, currP, desig, comp, loca, natow, version, dt_created,
+                                  dt_updated)
+VALUES (8, STR_TO_DATE('01-02-2013', '%d-%m-%Y'), STR_TO_DATE('01-07-2014', '%d-%m-%Y'), FALSE,
+        'Java Software Developer',
+        'Integrity IT Solutions', 'Centurion, ZAF', 'Responsibilities: ', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 # -------------------------------Responsibilities-Data------------------------------------------
 # Populating Responsibility Config-Data
+alter table dr_schema.responsibility
+    modify resp varchar(855) null;
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (1, 1, 'Continuous Professional Development (CPD) – Special emphasis on continuous learning, acquiring new knowledge and skills to enhancing the level of professional competence within the modern industry.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
-
-INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (2, 1, 'Designing, developing and implementing redundant cloud-driven software solutions that are scalable on demand, billable per usage, and reliable to end-users with minimal downtime.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
-
-INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (3, 1, 'Supporting & maintaining existing Spring Cloud Netflix software systems.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
-
-INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (4, 1, 'Tech Stack: Spring-Cloud, Spring-Boot, Circle-Ci, Docker, Kubernetes, Jacoco, Sonarqube, Git, Java-11.',
+VALUES (1, 2,
+        'Continuous Professional Development (CPD) – Special emphasis on continuous learning, acquiring new knowledge and skills to enhancing the level of professional competence within the modern industry.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (5, 2, 'Refactoring & migrating back-end monolith systems to Spring Boot containerised microservices. A microservice ecosystem',
+VALUES (2, 2,
+        'Designing, developing and implementing redundant cloud-driven software solutions that are scalable on demand, billable per usage, and reliable to end-users with minimal downtime.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (6, 2, 'Redesigning and migrating legacy database structures into maintainable and scalable relational models.',
+VALUES (3, 2, 'Supporting & maintaining existing Spring Cloud Netflix software systems.', 1, CURRENT_TIMESTAMP(),
+        CURRENT_TIMESTAMP());
+
+INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
+VALUES (4, 2, 'Tech Stack: Spring-Cloud, Spring-Boot, Circle-Ci, Docker, Kubernetes, Jacoco, Sonarqube, Git, Java-11.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (7, 2, 'High-quality production-ready code in agile environments through the use of test-driven methodologies.',
+VALUES (5, 3,
+        'Refactoring & migrating back-end monolith systems to Spring Boot containerised microservices. A microservice ecosystem',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (8, 2, 'Training & mentoring new developers and engaging in code-review sessions.', 1,
+VALUES (6, 3, 'Redesigning and migrating legacy database structures into maintainable and scalable relational models.',
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
+VALUES (7, 3, 'High-quality production-ready code in agile environments through the use of test-driven methodologies.',
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
+VALUES (8, 3, 'Training & mentoring new developers and engaging in code-review sessions.', 1,
         CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (9, 2, 'Designing and implementing cloud-ready Prototypes/P.O.C''s for the proposed microservices architecture solutions',
+VALUES (9, 3,
+        'Designing and implementing cloud-ready Prototypes/P.O.C''s for the proposed microservices architecture solutions',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (10, 3, 'Designing, developing & implementing upcoming systems using Scikit-Learn, Python, Matlab.', 1,
+VALUES (10, 4, 'Designing, developing & implementing upcoming systems using Scikit-Learn, Python, Matlab.', 1,
         CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (11, 3, 'Assisting clients on integrating Machine Learning within their current systems, with a significant added value on revenue',
+VALUES (11, 4,
+        'Assisting clients on integrating Machine Learning within their current systems, with a significant added value on revenue',
         1, current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (12, 3, 'Analysing trends, building statistical models for autonomous software systems such as Fraud Detection, Decision-Support Systems, Recommendations, Vision, Image & Handwriting/Text Recognition.', 1,
+VALUES (12, 4,
+        'Analysing trends, building statistical models for autonomous software systems such as Fraud Detection, Decision-Support Systems, Recommendations, Vision, Image & Handwriting/Text Recognition.',
+        1,
         current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (13, 4, 'Rewriting/Migrating traditional back-end monolith systems to containerized microservices.',
+VALUES (13, 5, 'Rewriting/Migrating traditional back-end monolith systems to containerized microservices.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (14, 4, 'Provided support for the African Bank website (Spring-Framework, Spring-MVC).', 1,
+VALUES (14, 5, 'Provided support for the African Bank website (Spring-Framework, Spring-MVC).', 1,
         CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (15, 4, 'Training Junior Developers and provided encouraging feedback ensuring quality work while adhering to coding standards.',
+VALUES (15, 5,
+        'Training Junior Developers and provided encouraging feedback ensuring quality work while adhering to coding standards.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (16, 4, 'Collaborated in an agile driven environment with the team where we utilise mostly the scrum development process to deliver solutions through iterative successful sprints.',
+VALUES (16, 5,
+        'Collaborated in an agile driven environment with the team where we utilise mostly the scrum development process to deliver solutions through iterative successful sprints.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (17, 4, 'Middleware microservices for transactional banking in an agile-driven team (scrum).', 1,
+VALUES (17, 5, 'Middleware microservices for transactional banking in an agile-driven team (scrum).', 1,
         CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (18, 4, 'Collaborated with Business Analysts, System Analysts and other stakeholders from various business units in redeveloping services for African Bank.',
+VALUES (18, 5,
+        'Collaborated with Business Analysts, System Analysts and other stakeholders from various business units in redeveloping services for African Bank.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (19, 4, 'Involved in several 3rd party integrations with different stakeholders including Blue Label telecoms, Thunderhead, DEA, Direct-Transact for airtime, electricity, online bank statements, transactional banking, loan, documents, and notification services.',
+VALUES (19, 5,
+        'Involved in several 3rd party integrations with different stakeholders including Blue Label telecoms, Thunderhead, DEA, Direct-Transact for airtime, electricity, online bank statements, transactional banking, loan, documents, and notification services.',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (20, 4, 'Tech-Stack: Jenkins, Jacoco, Spring-MVC, Spring-Boot, Spring-Cloud, Docker, Docker-Swarm, Sonarqube, Artifactory, Git, Gitlab, Java-8',
+VALUES (20, 5,
+        'Tech-Stack: Jenkins, Jacoco, Spring-MVC, Spring-Boot, Spring-Cloud, Docker, Docker-Swarm, Sonarqube, Artifactory, Git, Gitlab, Java-8',
         1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (21, 5, 'Supporting & resolving bugs.', 1, current_timestamp(), current_timestamp());
+VALUES (21, 6, 'Supporting & resolving bugs.', 1, current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (22, 5, 'Oracle PL/SQL, Web Services (SOAP, XML), Linux Ubuntu.', 1, current_timestamp(), current_timestamp());
+VALUES (22, 6, 'Oracle PL/SQL, Web Services (SOAP, XML), Linux Ubuntu.', 1, current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (23, 5, 'Implemented Jenkins & Nexus on Test servers as a new standard out of individual initiative', 1,
+VALUES (23, 6, 'Implemented Jenkins & Nexus on Test servers as a new standard out of individual initiative', 1,
         current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (24, 5, 'Executed work strictly according to allocated support tickets.', 1,
+VALUES (24, 6, 'Executed work strictly according to allocated support tickets.', 1,
         current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (25, 6, 'EJB, Java EE, Java SE, JPA2, Spring MVC, JavaScript, HTML, JQuery.', 1, current_timestamp(),
+VALUES (25, 7, 'EJB, Java EE, Java SE, JPA2, Spring MVC, JavaScript, HTML, JQuery.', 1, current_timestamp(),
         current_timestamp());
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (26, 6, 'Application Servers (Glassfish, JBoss).', 1, current_timestamp(), current_timestamp());
+VALUES (26, 7, 'Application Servers (Glassfish, JBoss).', 1, current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (27, 6, 'Linux Ubuntu, Code repositories (SVN/Git Version Control).', 1, current_timestamp(),
+VALUES (27, 7, 'Linux Ubuntu, Code repositories (SVN/Git Version Control).', 1, current_timestamp(),
         current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (28, 6, 'Mule & ActiveMQ.', 1, current_timestamp(), current_timestamp());
+VALUES (28, 7, 'Mule & ActiveMQ.', 1, current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (29, 6, 'Unit Testing.', 1, current_timestamp(), current_timestamp());
+VALUES (29, 7, 'Unit Testing.', 1, current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
 VALUES (30, 7, 'Back-end and Front-end programming in conjunction with the SmartClient Framework.', 1,
         current_timestamp(), current_timestamp());
 
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (31, 7, 'Faund Cloud Directory Service.', 1, current_timestamp(), current_timestamp());
+VALUES (31, 8, 'Faund Cloud Directory Service.', 1, current_timestamp(), current_timestamp());
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (32, 7, 'AdminOnline Management System.', 1, current_timestamp(), current_timestamp());
+VALUES (32, 8, 'AdminOnline Management System.', 1, current_timestamp(), current_timestamp());
 INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
-VALUES (33, 7, 'GSM & SMS enabled Memeza Alarm System.', 1, current_timestamp(), current_timestamp());
+VALUES (33, 8, 'GSM & SMS enabled Memeza Alarm System.', 1, current_timestamp(), current_timestamp());
+
+INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
+VALUES (34, 1,
+        'Refactoring & migrating back-end monolith systems to Spring Boot containerised microservices within a microservice ecosystem.',
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
+VALUES (35, 1,
+        'Java Micro Channel Architecture (MCA), refactoring backend middleware microservices within a microservices ecosystem. Supporting and maintaining the Online Share Trading (OST) Standard Bank backend monolith and microservices applications',
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
+VALUES (36, 1,
+        'Implementing and understanding the codebase of the existing legacy systems with the aim to improve the process flows, and re-write efficient lean code and addressing the separation of concerns between microservices. Producing UML documentation for the current legacy/monolith architecture.',
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
+VALUES (37, 1, 'Development of the features and bug fixes to the Equities Mobile MCA codebase.', 1, CURRENT_TIMESTAMP(),
+        CURRENT_TIMESTAMP());
+
+INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
+VALUES (38, 1, 'Providing End-to-End Testing of the applications prior to deployment in the SIT & Prod environments', 1,
+        CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+INSERT INTO dr_schema.responsibility (id, experience_id, resp, version, dt_created, dt_updated)
+VALUES (39, 1,
+        'Migrating legacy OST applications to modern tech-stack to align with the AWS cloud-journey requirements of the affected stakeholders.',
+        1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+
 
 # --------------------------------------------------------------------------------------------
 # -------------------------------End-Experience-Data------------------------------------------

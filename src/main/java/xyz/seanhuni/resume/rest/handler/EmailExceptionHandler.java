@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import xyz.seanhuni.resume.dto.RespDto;
 import xyz.seanhuni.resume.exception.EmailException;
+import xyz.seanhuni.resume.pojo.resp.RespDto;
 
 import java.time.LocalDateTime;
 import java.util.Locale;

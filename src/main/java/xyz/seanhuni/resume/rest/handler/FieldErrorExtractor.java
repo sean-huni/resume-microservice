@@ -1,7 +1,7 @@
 package xyz.seanhuni.resume.rest.handler;
 
 import org.springframework.validation.FieldError;
-import xyz.seanhuni.resume.dto.Error;
+import xyz.seanhuni.resume.pojo.resp.Error;
 
 import java.util.List;
 import java.util.Objects;

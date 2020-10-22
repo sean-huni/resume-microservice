@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -19,6 +20,7 @@ public class Responsibility extends AbstractDomainClass implements DomainObject 
     private Integer experience_id;
     @Getter
     @Setter
+    @Column(length = 855)
     private String resp;
 
 }

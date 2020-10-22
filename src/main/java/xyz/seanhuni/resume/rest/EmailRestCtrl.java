@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import xyz.seanhuni.resume.dto.RespDto;
 import xyz.seanhuni.resume.exception.EmailException;
-import xyz.seanhuni.resume.forms.EmailForm;
+import xyz.seanhuni.resume.pojo.req.EmailForm;
+import xyz.seanhuni.resume.pojo.resp.RespDto;
 import xyz.seanhuni.resume.service.EmailProcessService;
 
 import javax.validation.Valid;

@@ -1,7 +1,7 @@
 package xyz.seanhuni.resume.service;
 
-import xyz.seanhuni.resume.dto.RespDto;
 import xyz.seanhuni.resume.exception.EmailException;
+import xyz.seanhuni.resume.pojo.resp.RespDto;
 
 public interface EmailProcessService {
 

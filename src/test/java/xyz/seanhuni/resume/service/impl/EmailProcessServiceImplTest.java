@@ -9,8 +9,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import xyz.seanhuni.resume.dto.RespDto;
 import xyz.seanhuni.resume.exception.EmailException;
+import xyz.seanhuni.resume.pojo.resp.RespDto;
 import xyz.seanhuni.resume.service.EmailProcessService;
 import xyz.seanhuni.resume.service.EmailService;
 

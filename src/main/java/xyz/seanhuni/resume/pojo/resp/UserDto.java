@@ -1,4 +1,4 @@
-package xyz.seanhuni.resume.dto;
+package xyz.seanhuni.resume.pojo.resp;
 
 import lombok.Data;
 
