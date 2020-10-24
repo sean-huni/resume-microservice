@@ -21,7 +21,7 @@ class FileReaderImplTest {
 
     @Test
     void givenFileReaderService_whenRetrievingResource_thenReturnVersionString() {
-        final String version = "5.0.5";
+        final String version = "5.0.7";
 
         assertEquals(version, readerService.getVersion());
 
