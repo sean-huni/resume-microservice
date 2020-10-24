@@ -5,14 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xyz.seanhuni.resume.commons.Constants;
 import xyz.seanhuni.resume.commons.FileReaderService;
-import xyz.seanhuni.resume.dto.RespDto;
 import xyz.seanhuni.resume.exception.EmailException;
-import xyz.seanhuni.resume.forms.EmailForm;
 import xyz.seanhuni.resume.persistence.entity.EmailMsg;
 import xyz.seanhuni.resume.persistence.entity.User;
 import xyz.seanhuni.resume.persistence.repo.UserRepo;
+import xyz.seanhuni.resume.pojo.req.EmailForm;
+import xyz.seanhuni.resume.pojo.resp.RespDto;
+import xyz.seanhuni.resume.service.EmailProcessService;
 import xyz.seanhuni.resume.service.EmailService;
-import xyz.seanhuni.resume.service.PreProcessService;
 import xyz.seanhuni.resume.util.InputDataValidation;
 
 import java.util.ArrayList;
@@ -21,13 +21,13 @@ import java.util.Objects;
 
 @Log4j2
 @Service
-public class PreProcessServiceImpl implements PreProcessService {
+public class EmailProcessServiceImpl implements EmailProcessService {
     private final UserRepo userRepo;
     private EmailService emailService;
     private InputDataValidation dataValidation;
     private FileReaderService versionService;
 
-    public PreProcessServiceImpl(EmailService emailService, UserRepo userRepo, InputDataValidation dataValidation) {
+    public EmailProcessServiceImpl(EmailService emailService, UserRepo userRepo, InputDataValidation dataValidation) {
         this.emailService = emailService;
         this.userRepo = userRepo;
         this.dataValidation = dataValidation;

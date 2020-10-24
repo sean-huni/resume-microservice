@@ -1,4 +1,4 @@
-package xyz.seanhuni.resume.forms;
+package xyz.seanhuni.resume.pojo.req;
 
 import lombok.Data;
 import org.springframework.validation.annotation.Validated;

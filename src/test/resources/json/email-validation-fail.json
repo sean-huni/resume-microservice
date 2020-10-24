@@ -1,0 +1,13 @@
+{
+  "name": null,
+  "success": false,
+  "respMsg": "Invalid Request! Failed validation! Please check all the email-fields & try again.",
+  "errors": [
+    {
+      "field": "email",
+      "errMsg": "must be a well-formed email address",
+      "rejectedValue": "troy201_msn.com"
+    }
+  ],
+  "timestamp": "06/07/2020 00:36:13"
+}

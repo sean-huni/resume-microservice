@@ -2,8 +2,8 @@ package xyz.seanhuni.resume.service.mapper;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
-import xyz.seanhuni.resume.dto.EducationDto;
 import xyz.seanhuni.resume.persistence.entity.Education;
+import xyz.seanhuni.resume.pojo.resp.EducationDto;
 
 import java.util.Objects;
 

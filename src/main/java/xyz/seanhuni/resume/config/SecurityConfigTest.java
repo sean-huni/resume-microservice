@@ -17,6 +17,7 @@ public class SecurityConfigTest extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
 //                .antMatchers("/login").permitAll()
                 .antMatchers("/**").hasIpAddress("localhost")
+                .antMatchers("/**").hasIpAddress("127.0.0.1")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll()

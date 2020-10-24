@@ -2,8 +2,8 @@ package xyz.seanhuni.resume.service.mapper;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
-import xyz.seanhuni.resume.dto.RecommendDto;
 import xyz.seanhuni.resume.persistence.entity.Recommend;
+import xyz.seanhuni.resume.pojo.resp.RecommendDto;
 
 import java.util.Objects;
 

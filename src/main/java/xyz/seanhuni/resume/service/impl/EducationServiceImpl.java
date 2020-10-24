@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Service;
-import xyz.seanhuni.resume.dto.EducationDto;
 import xyz.seanhuni.resume.persistence.entity.Education;
 import xyz.seanhuni.resume.persistence.repo.EducationRepo;
+import xyz.seanhuni.resume.pojo.resp.EducationDto;
 import xyz.seanhuni.resume.service.EducationService;
 
 import java.util.List;

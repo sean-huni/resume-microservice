@@ -2,9 +2,9 @@ package xyz.seanhuni.resume.service.impl;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Service;
-import xyz.seanhuni.resume.dto.ExperienceDto;
 import xyz.seanhuni.resume.persistence.entity.Experience;
 import xyz.seanhuni.resume.persistence.repo.ExperienceRepo;
+import xyz.seanhuni.resume.pojo.resp.ExperienceDto;
 import xyz.seanhuni.resume.service.ExperienceService;
 
 import java.util.List;
